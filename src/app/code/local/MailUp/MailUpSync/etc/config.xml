@@ -32,6 +32,17 @@
 				</mailup>
 			</updates>
 		</layout>
+        <events>
+            <customer_save_after>
+                <observers>
+                    <mailup_checkout_order_save>
+                        <type>singleton</type>
+                        <class>MailUp_MailUpSync_Model_Observer</class>
+                        <method>prepareCustomerForDataSync</method>
+                    </mailup_checkout_order_save>
+                </observers>
+            </customer_save_after>
+        </events>
 	</frontend>
 <!-- global -->
     <global>
@@ -159,15 +170,6 @@
                     </mailup_checkout_order_save>
                 </observers>
             </controller_action_postdispatch_checkout_multishipping_saveOrder>
-			<customer_save_after>
-				<observers>
-					<mailup_checkout_order_save>
-						<type>singleton</type>
-						<class>MailUp_MailUpSync_Model_Observer</class>
-						<method>prepareCustomerForDataSync</method>
-					</mailup_checkout_order_save>
-				</observers>
-			</customer_save_after>
 			<sales_order_save_after>
 				<observers>
 					<mailup_sales_order_save_after>
@@ -341,6 +343,17 @@
                 </mailup>
             </modules>
         </translate>
+        <events>
+            <customer_save_after>
+                <observers>
+                    <mailup_checkout_order_save>
+                        <type>singleton</type>
+                        <class>MailUp_MailUpSync_Model_Observer</class>
+                        <method>prepareCustomerForDataSync</method>
+                    </mailup_checkout_order_save>
+                </observers>
+            </customer_save_after>
+        </events>
     </adminhtml>
 <!-- cron -->
     <crontab>
